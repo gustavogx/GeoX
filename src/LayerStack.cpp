@@ -12,15 +12,16 @@ namespace GX {
 		}
 	}
 
-	void LayerStack::PushLayer(Layer* layer)
+	u_int32_t LayerStack::PushLayer(Layer* layer)
 	{
 		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
-		m_LayerInsertIndex++;
+		return m_LayerInsertIndex++;
 	}
 
-	void LayerStack::PushOverlay(Layer* overlay)
+	u_int32_t LayerStack::PushOverlay(Layer* overlay)
 	{
-		m_Layers.emplace_back(overlay);
+		m_Layers.emplace(m_Layers.end() - 1, overlay);
+		return m_Layers.size()-2;
 	}
 
 	void LayerStack::PopLayer(Layer* layer)
@@ -29,6 +30,17 @@ namespace GX {
 		if (it != m_Layers.begin() + m_LayerInsertIndex)
 		{
 			layer->OnDetach();
+			m_Layers.erase(it);
+			m_LayerInsertIndex--;
+		}
+	}
+
+	void LayerStack::PopLayer(const u_int32_t &index)
+	{
+		auto it = m_Layers.begin() + index;
+		if (it < m_Layers.begin() + m_LayerInsertIndex)
+		{
+			(*it)->OnDetach();
 			m_Layers.erase(it);
 			m_LayerInsertIndex--;
 		}
@@ -44,4 +56,13 @@ namespace GX {
 		}
 	}
 
+	void LayerStack::PopOverlay(const u_int32_t &index)
+	{
+		auto it = m_Layers.begin() + index;
+		if (it >= m_Layers.begin() + m_LayerInsertIndex && it < m_Layers.end())
+		{
+			(*it)->OnDetach();
+			m_Layers.erase(it);
+		}
+	}
 }

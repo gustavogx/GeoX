@@ -7,11 +7,19 @@ namespace GX
 {
     Application* Application::s_Instance = nullptr;
 
-    Application::Application(){
+    Application::Application() : 
+        m_Running(true),
+        m_Minimized(false),
+        m_LastFrameTime(0.0f)
+    {
         s_Instance = this;
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetEventCallback( GX_BIND_EVENT_FN(Application::OnEvent) );
-        PushLayer(new ImGuiLayer());
+        m_LayerZero = new Layer();
+        m_LayerImGui = new ImGuiLayer();
+        m_LayerImGui->IsVisible() = false;
+        PushLayer(m_LayerZero);
+        PushOverlay(m_LayerImGui);
     }
 
     Application::~Application() {}
@@ -23,7 +31,7 @@ namespace GX
             glClearColor(0.11f,0.11f,0.10f,1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            for (auto* layer : m_LayerStack) layer->OnUpdate();
+            for (auto* layer : m_LayerStack) if(layer->IsVisible()) layer->OnUpdate();
 
             m_Window->OnUpdate();
         }
@@ -45,7 +53,8 @@ namespace GX
         EventDispatcher dispatcher(event);
         dispatcher.Dispatch<WindowCloseEvent>(GX_BIND_EVENT_FN(Application::OnApplicationClose));
 
-        for(auto aLayer = m_LayerStack.rbegin(); aLayer != m_LayerStack.rend(); aLayer++){
+        for(auto aLayer = m_LayerStack.rbegin(); aLayer != m_LayerStack.rend(); aLayer++)
+        if( (*aLayer)->IsVisible() ) {
             (*aLayer)->OnEvent(event);
             if(event.Handled) break;
         }
