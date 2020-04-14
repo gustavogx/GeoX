@@ -33,6 +33,10 @@ namespace GX
 
             for (auto* layer : m_LayerStack) if(layer->IsVisible()) layer->OnUpdate();
 
+            m_LayerImGui->Begin();
+            for (auto* layer : m_LayerStack) if(layer->IsVisible()) layer->OnImGuiRender();
+            m_LayerImGui->End();
+
             m_Window->OnUpdate();
         }
         return 0;
