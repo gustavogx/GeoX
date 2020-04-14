@@ -6,6 +6,8 @@
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
 
+#include "Renderer/Shader.h"
+
 int main(int argc, char **argv);
 
 
@@ -27,6 +29,9 @@ private:
     ImGuiLayer *m_LayerImGui;
     
     LayerStack m_LayerStack;
+
+    u_int32_t m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+    std::unique_ptr<Shader> m_Shader;
 
     static Application *s_Instance;
 

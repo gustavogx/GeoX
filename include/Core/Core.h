@@ -4,16 +4,18 @@
 #include "Data/InputCodes/KeyCodes.h"
 #include "Data/InputCodes/MouseCodes.h"
 
+#define GX_DEBUG
+
 #ifdef GX_DEBUG
-	#define ENABLE_ASSERTS
+	#define GX_ENABLE_ASSERTS
 #endif
 
 #ifdef GX_ENABLE_ASSERTS
-	#define ASSERT(x, ...) { if(!(x)) { ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define CORE_ASSERT(x, ...) { if(!(x)) { CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define GX_ASSERT(x, ...) { if(!(x)) { LOG_APP_ERROR("Assertion Failed: {0}", __VA_ARGS__); assert(false); } }
+	#define GX_CORE_ASSERT(x, ...) { if(!(x)) { LOG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); assert(false); } }
 #else
-	#define ASSERT(x, ...)
-	#define CORE_ASSERT(x, ...)
+	#define GX_ASSERT(x, ...)
+	#define GX_CORE_ASSERT(x, ...)
 #endif
 
 #define GX_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

@@ -1,6 +1,8 @@
 #pragma once
 #include "Core/GeoXPCH.h"
 #include "Base/WindowBase.h"
+#include "Renderer/GraphicsContext.h"
+#include "Platform/OpenGL/OpenGLContext.h"
 
 #define GLFW_INCLUDE_NONE
 #include "GLFW/glfw3.h"
@@ -21,7 +23,7 @@ namespace GX{
         WindowData m_Data;
         GLFWwindow *m_Window;
 
-
+        GraphicsContext *m_Context; 
 
         virtual void Init(const WindowProperties &properties);
         virtual void Shutdown();

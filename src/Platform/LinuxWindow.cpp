@@ -4,6 +4,9 @@
 #include "Events/MouseEvent.h"
 #include "Events/KeyEvent.h"
 
+#include "Platform/OpenGL/OpenGLContext.h"
+#include "Renderer/GraphicsContext.h"
+
 #include "glad/glad.h"
 
 
@@ -48,9 +51,8 @@ namespace GX{
         }
 
         m_Window = glfwCreateWindow(m_Data.Width,m_Data.Height,m_Data.Title.c_str(),nullptr,nullptr);
-        glfwMakeContextCurrent(m_Window);
-        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        ASSERT(status,"Failed to Initialize GLAD");
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
@@ -154,7 +156,8 @@ namespace GX{
 
     void LinuxWindow::OnUpdate(){
         glfwPollEvents();
-        glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
+
     }
 
     void LinuxWindow::SetVSync(const bool &enabled){
