@@ -12,13 +12,13 @@ namespace GX {
 		}
 	}
 
-	u_int32_t LayerStack::PushLayer(Layer* layer)
+	uint32_t LayerStack::PushLayer(Layer* layer)
 	{
 		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
 		return m_LayerInsertIndex++;
 	}
 
-	u_int32_t LayerStack::PushOverlay(Layer* overlay)
+	uint32_t LayerStack::PushOverlay(Layer* overlay)
 	{
 		m_Layers.emplace(m_Layers.end() - 1, overlay);
 		return m_Layers.size()-2;
@@ -35,7 +35,7 @@ namespace GX {
 		}
 	}
 
-	void LayerStack::PopLayer(const u_int32_t &index)
+	void LayerStack::PopLayer(const uint32_t &index)
 	{
 		auto it = m_Layers.begin() + index;
 		if (it < m_Layers.begin() + m_LayerInsertIndex)
@@ -56,7 +56,7 @@ namespace GX {
 		}
 	}
 
-	void LayerStack::PopOverlay(const u_int32_t &index)
+	void LayerStack::PopOverlay(const uint32_t &index)
 	{
 		auto it = m_Layers.begin() + index;
 		if (it >= m_Layers.begin() + m_LayerInsertIndex && it < m_Layers.end())

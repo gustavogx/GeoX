@@ -7,6 +7,7 @@
 #include "ImGui/ImGuiLayer.h"
 
 #include "Renderer/Shader.h"
+#include "Renderer/Buffers.h"
 
 int main(int argc, char **argv);
 
@@ -30,8 +31,10 @@ private:
     
     LayerStack m_LayerStack;
 
-    u_int32_t m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+    uint32_t m_VertexArray;
     std::unique_ptr<Shader> m_Shader;
+    std::unique_ptr<VertexBuffer> m_VertexBuffer;
+    std::unique_ptr<IndexBuffer> m_IndexBuffer;
 
     static Application *s_Instance;
 

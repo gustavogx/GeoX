@@ -19,10 +19,13 @@ add_library(GeoX
     src/LayerStack.cpp
     src/ImGui.cpp
     src/ImGuiLayer.cpp
+    src/Shader.cpp
+    src/Buffers.cpp
+    src/Renderer.cpp
     src/Platform/LinuxWindow.cpp
     src/Platform/LinuxInput.cpp
     src/Platform/OpenGL/OpenGLContext.cpp
-    src/Shader.cpp
+    src/Platform/OpenGL/OpenGLBuffers.cpp
 )
 
 target_include_directories(GeoX 
