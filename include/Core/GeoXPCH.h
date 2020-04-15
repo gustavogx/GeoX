@@ -8,5 +8,5 @@
 #include <sstream>
 #include <vector>
 
-// from GraphiX
-#include "Logger.h"
+// from GeoX
+#include "Core/Logger.h"

@@ -1,10 +1,11 @@
 // Core
 #pragma once
 #include "Core/GeoXPCH.h"
-#include "Data/InputCodes/KeyCodes.h"
-#include "Data/InputCodes/MouseCodes.h"
+#include "Core/InputCodes/KeyCodes.h"
+#include "Core/InputCodes/MouseCodes.h"
 
 #define GX_DEBUG
+#define GX_PLATFORM_LINUX
 
 #ifdef GX_DEBUG
 	#define GX_ENABLE_ASSERTS

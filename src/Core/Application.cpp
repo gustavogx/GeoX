@@ -1,7 +1,4 @@
-#include "Core/GeoXPCH.h"
-#include "Core/Core.h"
-
-#include "Application.h"
+#include "Core/Application.h"
 
 
 extern GX::Application *GX::CreateApplication();

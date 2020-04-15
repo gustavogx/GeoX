@@ -1,5 +1,5 @@
 #pragma once
-#include "Core/GeoXPCH.h"
+#include "Core/Core.h"
 #include "Base/WindowBase.h"
 #include "Renderer/GraphicsContext.h"
 #include "Platform/OpenGL/OpenGLContext.h"

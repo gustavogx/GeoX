@@ -1,8 +1,7 @@
-#include "Core/GeoXPCH.h"
+#include "Core/Core.h"
+#include "Core/Application.h"
 #include "ImGui/ImGuiLayer.h"
-
 #include "ImGui/ImGui.h"
-#include "Application.h"
 
 // temporary
 #include "GLFW/glfw3.h" 

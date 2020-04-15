@@ -1,5 +1,5 @@
-#include "Core/GeoXPCH.h"
-#include "LayerStack.h"
+#include "Core/Core.h"
+#include "Core/LayerStack.h"
 
 namespace GX {
 

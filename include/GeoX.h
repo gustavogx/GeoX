@@ -1,7 +1,7 @@
 // GeometriX
 #pragma once
 
-#include "Logger.h"
-#include "Application.h"
-#include "Layer.h"
+#include "Core/Logger.h"
+#include "Core/Application.h"
+#include "Core/Layer.h"
 #include "ImGui/ImGui.h"

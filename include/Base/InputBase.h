@@ -1,8 +1,5 @@
 #pragma once
-
 #include "Core/Core.h"
-#include "Data/InputCodes/KeyCodes.h"
-#include "Data/InputCodes/MouseCodes.h"
 
 namespace GX {
 

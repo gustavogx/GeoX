@@ -1,6 +1,4 @@
-//#include "GXPCH.h"
-
-#include "Logger.h"
+#include "Core/Logger.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace GX

@@ -1,6 +1,6 @@
-#include "Core/GeoXPCH.h"
-#include "Application.h"
-#include "Platform/LinuxInput.h"
+#include "Core/Core.h"
+#include "Core/Application.h"
+#include "Platform/Linux/LinuxInput.h"
 
 // On Linux we use GLFW.
 #include <GLFW/glfw3.h>

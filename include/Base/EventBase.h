@@ -1,5 +1,4 @@
 #pragma once
-#include "Core/GeoXPCH.h"
 #include "Core/Core.h"
 
 namespace GX{

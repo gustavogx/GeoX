@@ -13,17 +13,17 @@ add_subdirectory(3rdparty/glm)
 
 add_library(GeoX
     src/GeoX.cpp
-    src/Logger.cpp
-    src/Application.cpp
-    src/Layer.cpp
-    src/LayerStack.cpp
-    src/ImGui.cpp
-    src/ImGuiLayer.cpp
-    src/Shader.cpp
-    src/Buffers.cpp
-    src/Renderer.cpp
-    src/Platform/LinuxWindow.cpp
-    src/Platform/LinuxInput.cpp
+    src/Core/Application.cpp
+    src/Core/Logger.cpp
+    src/Core/Layer.cpp
+    src/Core/LayerStack.cpp
+    src/ImGui/ImGui.cpp
+    src/ImGui/ImGuiLayer.cpp
+    src/Renderer/Shader.cpp
+    src/Renderer/Buffers.cpp
+    src/Renderer/Renderer.cpp
+    src/Platform/Linux/LinuxWindow.cpp
+    src/Platform/Linux/LinuxInput.cpp
     src/Platform/OpenGL/OpenGLContext.cpp
     src/Platform/OpenGL/OpenGLBuffers.cpp
 )

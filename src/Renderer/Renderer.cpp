@@ -1,4 +1,4 @@
-#include "Core/GeoXPCH.h"
+#include "Core/Core.h"
 #include "Renderer/Renderer.h"
 
 namespace GX{
