@@ -21,11 +21,16 @@ add_library(GeoX
     src/ImGui/ImGuiLayer.cpp
     src/Renderer/Shader.cpp
     src/Renderer/Buffers.cpp
+    src/Renderer/VertexArray.cpp
     src/Renderer/Renderer.cpp
+    src/Renderer/RendererAPI.cpp
+    src/Renderer/RendererCommand.cpp
     src/Platform/Linux/LinuxWindow.cpp
     src/Platform/Linux/LinuxInput.cpp
     src/Platform/OpenGL/OpenGLContext.cpp
     src/Platform/OpenGL/OpenGLBuffers.cpp
+    src/Platform/OpenGL/OpenGLVertexArray.cpp
+    src/Platform/OpenGL/OpenGLRendererAPI.cpp
 )
 
 target_include_directories(GeoX 

@@ -7,8 +7,6 @@
 #include "Platform/OpenGL/OpenGLContext.h"
 #include "Renderer/GraphicsContext.h"
 
-#include "glad/glad.h"
-
 
 namespace GX{
 
