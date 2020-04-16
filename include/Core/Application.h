@@ -9,6 +9,7 @@
 #include "Renderer/Shader.h"
 #include "Renderer/Buffers.h"
 #include "Renderer/VertexArray.h"
+#include "Renderer/Cameras.h"
 
 int main(int argc, char **argv);
 
@@ -39,6 +40,8 @@ private:
 
     std::shared_ptr<Shader> m_BlueShader;
     std::shared_ptr<VertexArray> m_SquareVA;
+
+    OrthographicCamera m_Camera;
 
     static Application *s_Instance;
 

@@ -21,6 +21,7 @@ add_library(GeoX
     src/ImGui/ImGuiLayer.cpp
     src/Renderer/Shader.cpp
     src/Renderer/Buffers.cpp
+    src/Renderer/Cameras.cpp
     src/Renderer/VertexArray.cpp
     src/Renderer/Renderer.cpp
     src/Renderer/RendererAPI.cpp
