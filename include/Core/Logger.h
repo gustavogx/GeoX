@@ -21,7 +21,7 @@ public:
 
 }
 
-#ifndef RELEASE
+#ifndef GX_RELEASE
 
     #define LOG_CORE_TRACE(...) GX::Logger::GetCoreLogger()->trace(__VA_ARGS__)
     #define LOG_CORE_INFO(...) GX::Logger::GetCoreLogger()->info(__VA_ARGS__)

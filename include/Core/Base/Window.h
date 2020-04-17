@@ -1,6 +1,7 @@
 #pragma once
 #include "Core/Core.h"
-#include "EventBase.h"
+
+#include "Core/Base/Event.h"
 
 namespace GX{
 
@@ -27,6 +28,10 @@ public:
 
     static Window* Create(const WindowProperties& prop = WindowProperties());
     virtual void* GetNativeWindow() const = 0;
+
+    virtual void SetVSync(const bool &enabled) = 0;
+    virtual bool IsVSyncEnabled() const = 0;
+
 };
 
 }

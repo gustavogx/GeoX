@@ -1,6 +1,6 @@
 #pragma once
 #include "Core/Core.h"
-#include "Base/EventBase.h"
+#include "Core/Base/Event.h"
 
 namespace GX {
 

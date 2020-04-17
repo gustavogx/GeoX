@@ -1,4 +1,6 @@
 #pragma once
+#include "Core/Core.h"
+
 #include "Renderer/Buffers.h"
 
 namespace GX{

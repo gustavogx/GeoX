@@ -1,3 +1,5 @@
+
+
 #include "Platform/Linux/LinuxWindow.h"
 
 #include "Events/ApplicationEvent.h"
@@ -171,6 +173,6 @@ namespace GX{
 
         glfwDestroyWindow(m_Window);
 
-    }
+	}
 
 }

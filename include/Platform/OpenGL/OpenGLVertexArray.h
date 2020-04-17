@@ -1,5 +1,6 @@
 #pragma once
 #include "Core/Core.h"
+
 #include "Renderer/VertexArray.h"
 
 namespace GX {

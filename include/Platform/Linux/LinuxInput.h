@@ -1,6 +1,7 @@
 #pragma once
+#include "Core/Core.h"
 
-#include "Base/InputBase.h"
+#include "Core/Input/Input.h"
 
 namespace GX {
 

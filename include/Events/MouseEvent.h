@@ -1,7 +1,8 @@
 #pragma once
+#include "Core/Core.h"
 
-#include "Base/EventBase.h"
-#include "Base/InputBase.h"
+#include "Core/Base/Event.h"
+#include "Core/Input/Input.h"
 
 namespace GX {
 

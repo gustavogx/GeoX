@@ -1,4 +1,5 @@
-#include "Core/Core.h"
+
+
 #include "Core/Layer.h"
 
 namespace GX {

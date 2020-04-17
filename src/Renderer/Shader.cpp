@@ -1,9 +1,8 @@
-#include "Core/Core.h"
-#include "Core/Core.h"
+
+
 #include "Renderer/Shader.h"
 
 #include "glad/glad.h"
-
 #include "glm/gtc/type_ptr.hpp"
 
 namespace GX{

@@ -1,4 +1,5 @@
 #pragma once
+#include "Core/Core.h"
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLAD
 #include "3rdparty/imgui/imgui.h"

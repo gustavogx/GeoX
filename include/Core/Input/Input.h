@@ -1,13 +1,18 @@
 #pragma once
 #include "Core/Core.h"
+#include "Core/Input/KeyCodes.h"
+#include "Core/Input/MouseCodes.h"
 
 namespace GX {
 
 	class Input
 	{
 	protected:
+
 		Input() = default;
+
 	public:
+
 		Input(const Input&) = delete;
 		Input& operator=(const Input&) = delete;
 
@@ -18,15 +23,20 @@ namespace GX {
 		inline static float GetMouseX() { return s_Instance->GetMouseXImpl(); }
 		inline static float GetMouseY() { return s_Instance->GetMouseYImpl(); }
 
-		static Scope<Input> Create();
+		static Unique<Input> Create();
+
 	protected:
+
 		virtual bool IsKeyPressedImpl(KeyCode key) = 0;
 
 		virtual bool IsMouseButtonPressedImpl(MouseCode button) = 0;
 		virtual std::pair<float, float> GetMousePositionImpl() = 0;
 		virtual float GetMouseXImpl() = 0;
 		virtual float GetMouseYImpl() = 0;
+
 	private:
-		static Scope<Input> s_Instance;
+
+		static Unique<Input> s_Instance;
+		
 	};
 }

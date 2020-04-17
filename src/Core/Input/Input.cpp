@@ -1,5 +1,5 @@
-#include "Core/Core.h"
-#include "Core/Input.h"
+
+#include "Core/Input/Input.h"
 
 #ifdef GX_PLATFORM_LINUX
 	#include "Platform/Linux/LinuxInput.h"
@@ -7,12 +7,12 @@
 
 namespace GX {
 
-	Scope<Input> Input::s_Instance = Input::Create();
+	Unique<Input> Input::s_Instance = Input::Create();
 
-	Scope<Input> Input::Create()
+	Unique<Input> Input::Create()
 	{
 	#ifdef GX_PLATFORM_LINUX
-		return CreateScope<WindowsInput>();
+		return MakeUnique<LinuxInput>();
 	#else
 		GX_CORE_ASSERT(false, "Unknown platform!");
 		return nullptr;

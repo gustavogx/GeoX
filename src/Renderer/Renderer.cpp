@@ -1,4 +1,5 @@
-#include "Core/Core.h"
+
+
 #include "Renderer/Renderer.h"
 
 namespace GX

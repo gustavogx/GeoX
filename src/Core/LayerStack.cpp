@@ -1,4 +1,6 @@
-#include "Core/Core.h"
+
+
+
 #include "Core/LayerStack.h"
 
 namespace GX {

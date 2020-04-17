@@ -1,5 +1,4 @@
-#include "Core/Core.h"
-#include "Core/Core.h"
+
 
 #include "Platform/OpenGL/OpenGLContext.h"
 

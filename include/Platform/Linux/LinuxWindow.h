@@ -1,6 +1,8 @@
 #pragma once
 #include "Core/Core.h"
-#include "Base/WindowBase.h"
+
+#include "Core/Base/Window.h"
+
 #include "Renderer/GraphicsContext.h"
 #include "Platform/OpenGL/OpenGLContext.h"
 
@@ -39,8 +41,12 @@ namespace GX{
         inline std::string GetTitle() const { return m_Data.Title; }
 
         inline void SetEventCallback(const EventCallbackFunction& callback) override { m_Data.EventCallback = callback; }
+        
         void SetVSync(const bool &enabled);
         bool IsVSyncEnabled() const { return m_Data.VSync; }
+
+        //virtual void* GetNativeWindow() const override {return (void*) this;}
+
 
     };
 

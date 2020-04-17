@@ -1,15 +1,16 @@
 #pragma once
 #include "Core/Core.h"
-#include "Platform/Linux/LinuxWindow.h"
+
 #include "Events/ApplicationEvent.h"
-#include "Layer.h"
-#include "LayerStack.h"
+
+#include "Core/LayerStack.h"
+#include "Core/Timestep.h"
+
 #include "ImGui/ImGuiLayer.h"
 
-#include "Renderer/Shader.h"
-#include "Renderer/Buffers.h"
-#include "Renderer/VertexArray.h"
-#include "Renderer/Cameras.h"
+#ifdef GX_PLATFORM_LINUX
+    #include "Platform/Linux/LinuxWindow.h"
+#endif
 
 int main(int argc, char **argv);
 
@@ -32,16 +33,6 @@ private:
     ImGuiLayer *m_LayerImGui;
     
     LayerStack m_LayerStack;
-
-    std::shared_ptr<Shader> m_Shader;
-    std::shared_ptr<VertexArray> m_VertexArray;
-    std::shared_ptr<VertexBuffer> m_VertexBuffer;
-    std::shared_ptr<IndexBuffer> m_IndexBuffer;
-
-    std::shared_ptr<Shader> m_BlueShader;
-    std::shared_ptr<VertexArray> m_SquareVA;
-
-    OrthographicCamera m_Camera;
 
     static Application *s_Instance;
 

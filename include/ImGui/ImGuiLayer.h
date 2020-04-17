@@ -1,5 +1,5 @@
 #pragma once
-#include "Core/Core.h"
+
 #include "Core/Layer.h"
 #include "Events/ApplicationEvent.h"
 #include "Events/MouseEvent.h"

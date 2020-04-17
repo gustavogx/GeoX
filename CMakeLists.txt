@@ -17,6 +17,7 @@ add_library(GeoX
     src/Core/Logger.cpp
     src/Core/Layer.cpp
     src/Core/LayerStack.cpp
+    src/Core/Input/Input.cpp
     src/ImGui/ImGui.cpp
     src/ImGui/ImGuiLayer.cpp
     src/Renderer/Shader.cpp
@@ -25,7 +26,7 @@ add_library(GeoX
     src/Renderer/VertexArray.cpp
     src/Renderer/Renderer.cpp
     src/Renderer/RendererAPI.cpp
-    src/Renderer/RendererCommand.cpp
+    src/Renderer/RendererCommands.cpp
     src/Platform/Linux/LinuxWindow.cpp
     src/Platform/Linux/LinuxInput.cpp
     src/Platform/OpenGL/OpenGLContext.cpp

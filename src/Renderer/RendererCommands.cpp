@@ -1,5 +1,6 @@
-#include "Core/Core.h"
-#include "Renderer/RendererCommand.h"
+
+
+#include "Renderer/RendererCommands.h"
 #include "Platform/OpenGL/OpenGLRendererAPI.h"
 
 namespace GX {

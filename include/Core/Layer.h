@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Core/Core.h"
-//#include "Hazel/Core/Timestep.h"
-#include "Base/EventBase.h"
+#include "Core/Timestep.h"
+#include "Core/Base/Event.h"
 
 namespace GX {
 
@@ -18,7 +18,7 @@ namespace GX {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {} //Timestep ts) {}
+		virtual void OnUpdate(Timestep timestep) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

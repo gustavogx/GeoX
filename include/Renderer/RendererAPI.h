@@ -1,4 +1,5 @@
 #pragma once
+#include "Core/Core.h"
 
 #include "glm/glm.hpp"
 #include "Renderer/VertexArray.h"

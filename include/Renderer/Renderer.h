@@ -1,5 +1,7 @@
 #pragma once
-#include "Renderer/RendererCommand.h"
+#include "Core/Core.h"
+
+#include "Renderer/RendererCommands.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Cameras.h"
 #include "glm/glm.hpp"
