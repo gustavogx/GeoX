@@ -27,7 +27,7 @@ private:
     bool m_Minimized;
     float m_LastFrameTime;
 
-    std::unique_ptr<Window> m_Window;
+    GX::ScopePointer<Window> m_Window;
 
     Layer *m_LayerZero;
     ImGuiLayer *m_LayerImGui;

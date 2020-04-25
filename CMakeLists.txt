@@ -32,6 +32,7 @@ add_library(GeoX
     src/Platform/OpenGL/OpenGLContext.cpp
     src/Platform/OpenGL/OpenGLBuffers.cpp
     src/Platform/OpenGL/OpenGLVertexArray.cpp
+    src/Platform/OpenGL/OpenGLShader.cpp
     src/Platform/OpenGL/OpenGLRendererAPI.cpp
 )
 

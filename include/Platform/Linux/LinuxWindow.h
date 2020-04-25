@@ -22,6 +22,8 @@ namespace GX{
         };
 
         WindowData m_Data;
+        WindowMouseChanges m_MouseChanges;
+
         GLFWwindow *m_Window;
 
         GraphicsContext *m_Context; 
@@ -45,8 +47,7 @@ namespace GX{
         void SetVSync(const bool &enabled);
         bool IsVSyncEnabled() const { return m_Data.VSync; }
 
-        //virtual void* GetNativeWindow() const override {return (void*) this;}
-
+        virtual WindowMouseChanges GetMouseChanges() const override { return m_MouseChanges; }
 
     };
 

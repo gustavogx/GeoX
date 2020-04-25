@@ -27,7 +27,7 @@ namespace GX {
 		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 		double xpos, ypos;
 		glfwGetCursorPos(window, &xpos, &ypos);
-
+		
 		return { (float)xpos, (float)ypos };
 	}
 

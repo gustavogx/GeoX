@@ -141,6 +141,7 @@ namespace GX{
 
 			MouseScrolledEvent event((float)xOffset, (float)yOffset);
 			data.EventCallback(event);
+			
 		});
 
         //OnMouseMove

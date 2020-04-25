@@ -23,7 +23,7 @@ namespace GX {
 		inline static float GetMouseX() { return s_Instance->GetMouseXImpl(); }
 		inline static float GetMouseY() { return s_Instance->GetMouseYImpl(); }
 
-		static Unique<Input> Create();
+		static ScopePointer<Input> Create();
 
 	protected:
 
@@ -36,7 +36,7 @@ namespace GX {
 
 	private:
 
-		static Unique<Input> s_Instance;
+		static ScopePointer<Input> s_Instance;
 		
 	};
 }

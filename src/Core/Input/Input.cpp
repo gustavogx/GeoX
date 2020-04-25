@@ -7,12 +7,12 @@
 
 namespace GX {
 
-	Unique<Input> Input::s_Instance = Input::Create();
+	ScopePointer<Input> Input::s_Instance = Input::Create();
 
-	Unique<Input> Input::Create()
+	ScopePointer<Input> Input::Create()
 	{
 	#ifdef GX_PLATFORM_LINUX
-		return MakeUnique<LinuxInput>();
+		return MakeScopePointer<LinuxInput>();
 	#else
 		GX_CORE_ASSERT(false, "Unknown platform!");
 		return nullptr;

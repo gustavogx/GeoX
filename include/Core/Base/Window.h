@@ -15,6 +15,12 @@ struct WindowProperties{
 
 };
 
+struct WindowMouseChanges{
+    float ScrollXOffset, ScrollYOffset, PositionXOffset, PositionYOffset;
+private:
+    float m_PreviousX, m_PreviousY;
+};
+
 class Window{
 public:
     using EventCallbackFunction = std::function<void(Event&)>;
@@ -31,6 +37,8 @@ public:
 
     virtual void SetVSync(const bool &enabled) = 0;
     virtual bool IsVSyncEnabled() const = 0;
+
+    virtual WindowMouseChanges GetMouseChanges() const = 0;
 
 };
 

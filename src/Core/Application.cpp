@@ -17,7 +17,7 @@ namespace GX
 
     {
         s_Instance = this;
-        m_Window = std::unique_ptr<Window>(Window::Create());
+        m_Window = ScopePointer<Window>(Window::Create());
         m_Window->SetVSync(true);
         m_Window->SetEventCallback( GX_BIND_EVENT_FN(Application::OnEvent) );
         m_LayerZero = new Layer();
